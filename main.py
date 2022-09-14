@@ -43,7 +43,7 @@ if will_rain:
     .create(
          body="It's going to rain today, take an umbrella ☔",
          from_="get your trial phone number from twilio",
-         to="add here your phone number or number where you want to receive the sms alert, you have to verify it from twilio""
+         to="add here your phone number or number where you want to receive/send the sms alert, you have to verify it in twilio"
 
      )
     print(message.status)
