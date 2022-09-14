@@ -1,18 +1,17 @@
 import requests
-#import os
 from twilio.rest import Client
 
-account_sid = "AC5d78048cd29e10629ccdb5a16aa75e78"
-auth_token = "24ec3658a2c1993d0bf5b7e4f47add97"
+account_sid = "get your account_sid number from twilio" # https://www.twilio.com/docs/sms/tutorials/how-to-send-sms-messages-python
+auth_token = "get your auth_token from twilio"
 
 
-Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+Endpoint = "https://api.openweathermap.org/data/2.5/onecall" # Endpoint API 
 
-api_key = "6a65d07699f449f3365a3d85ec1ba0ea"
+api_key = "get your api_key from https://api.openweathermap.org"
 
 
 parameters = {
-    "lat": 45.501690,
+    "lat": 45.501690,   #Montreal, CA
     "lon": -73.567253,
     "appid": api_key,
     "exclude": "current,minutely,dayly"
@@ -39,8 +38,8 @@ if will_rain:
     message = client.messages \
     .create(
          body="It's going to rain today, take an umbrella",
-         from_="+14014969474",
-         to="+15146924631"
+         from_="get your trial phone number from trilio",
+         to="add here your phone number or number where you want to receive the sms alert"
 
      )
     print(message.status)
