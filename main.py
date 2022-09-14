@@ -1,18 +1,20 @@
 import requests
+import os
 from twilio.rest import Client
+from twilio.http.http_client import TwilioHttpClient
 
 account_sid = "get your account_sid number from twilio" # https://www.twilio.com/docs/sms/tutorials/how-to-send-sms-messages-python
 auth_token = "get your auth_token from twilio"
 
 
-Endpoint = "https://api.openweathermap.org/data/2.5/onecall" # Endpoint API 
+Endpoint = "https://api.openweathermap.org/data/2.5/onecall"  # Endpoint API 
 
 api_key = "get your api_key from https://api.openweathermap.org"
 
 
 parameters = {
-    "lat": 45.501690,   #Montreal, CA
-    "lon": -73.567253,
+    "lat": xxxxxxxx, #place here the Latitude  coordinates of your city from https://www.latlong.net/
+    "lon": xxxxxxxx, #place here the Longitude coordinates of your city from https://www.latlong.net/
     "appid": api_key,
     "exclude": "current,minutely,dayly"
 }
@@ -34,16 +36,17 @@ for hour_data in weather_slice:
         will_rain = True
 
 if will_rain:
-    client = Client(account_sid, auth_token)
+    proxy_client = TwilioHttpClient()
+    proxy_client.session.proxies = {'https': os.environ['https_proxy']}
+    client = Client(account_sid, auth_token, http_client=proxy_client)
     message = client.messages \
     .create(
-         body="It's going to rain today, take an umbrella",
-         from_="get your trial phone number from trilio",
-         to="add here your phone number or number where you want to receive the sms alert"
+         body="It's going to rain today, take an umbrella ☔",
+         from_="get your trial phone number from twilio",
+         to="add here your phone number or number where you want to receive the sms alert, you have to verify it from twilio""
 
      )
     print(message.status)
 
-
-
+#take the code and place it in https://www.pythonanywhere.com in order to get the automated message to your phone 
 
