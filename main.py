@@ -48,5 +48,5 @@ if will_rain:
      )
     print(message.status)
 
-#take the code and place it in https://www.pythonanywhere.com in order to get the automated message to your phone 
+# add this code to created free account at the https://www.pythonanywhere.com in order to get the automated message to your phone everytime at 7.0 am if rain is coming
 
