@@ -39,12 +39,12 @@ Before running the app, you need to configure a few settings:
 
 Set up the following environment variables in your system or define them in a .env file in the project root:
 
-TWILIO_ACCOUNT_SID: Your Twilio Account SID.
-TWILIO_AUTH_TOKEN: Your Twilio Auth Token.
-TWILIO_PHONE_NUMBER: The Twilio phone number that will send the alerts.
-MY_PHONE_NUMBER: The phone number that will receive the alerts.
-OPENWEATHER_API_KEY: Your OpenWeatherMap API key.
-LATITUDE and LONGITUDE: The coordinates of the location you want to monitor.
+- TWILIO_ACCOUNT_SID: Your Twilio Account SID.
+- TWILIO_AUTH_TOKEN: Your Twilio Auth Token.
+- TWILIO_PHONE_NUMBER: The Twilio phone number that will send the alerts.
+- MY_PHONE_NUMBER: The phone number that will receive the alerts.
+- OPENWEATHER_API_KEY: Your OpenWeatherMap API key.
+-LATITUDE  and LONGITUDE: The coordinates of the location you want to monitor.
 
 ## Usage
 To run the rain alert app, execute the main.py script:
