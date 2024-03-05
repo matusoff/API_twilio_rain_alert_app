@@ -53,5 +53,11 @@ To run the rain alert app, execute the main.py script:
 python main.py
 ```
 
+## Credits
+This project makes use of the following APIs:
+
+- Twilio API for sending SMS messages. Special thanks to Twilio for providing a robust and easy-to-use API for communications.
+- OpenWeatherMap API for weather data and forecasts.
+
 ## Contributing
 Contributions to the Twilio API Rain Alert App are welcome! Feel free to fork the repository, make your changes, and submit a pull request.
